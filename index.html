@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Scheme Details</title>
+
+
+  <style>
+
+    * {
+
+      box-sizing: border-box;
+
+    }
+
+
+    html,
+    body {
+
+      margin: 0;
+      padding: 0;
+
+      width: 100%;
+
+      min-height: 100%;
+
+      font-family: Arial, Helvetica, sans-serif;
+
+      background: #ffffff;
+
+    }
+
+
+    /* ======================================================
+       MAIN DOCUMENT AREA
+       ====================================================== */
+
+    #doc-container {
+
+      width: 100%;
+
+      max-width: none;
+
+      margin: 0;
+
+      padding: 10px;
+
+      box-sizing: border-box;
+
+      overflow-x: auto;
+
+    }
+
+
+    /* ======================================================
+       GOOGLE DOC CONTENT
+       ====================================================== */
+
+    #doc-container .google-doc-content {
+
+      width: 100% !important;
+
+      max-width: none !important;
+
+      margin: 0 !important;
+
+      padding: 0 !important;
+
+      box-sizing: border-box !important;
+
+    }
+
+
+    #doc-container
+    .google-doc-content > div {
+
+      max-width: none !important;
+
+      box-sizing: border-box !important;
+
+    }
+
+
+    /* ======================================================
+       TABLE
+       ====================================================== */
+
+    #doc-container table {
+
+      max-width: 100% !important;
+
+      box-sizing: border-box !important;
+
+    }
+
+
+    /* ======================================================
+       IMAGES
+       ====================================================== */
+
+    #doc-container img {
+
+      max-width: 100% !important;
+
+      height: auto !important;
+
+    }
+
+
+    /* ======================================================
+       LINKS
+       ====================================================== */
+
+    #doc-container a {
+
+      cursor: pointer;
+
+    }
+
+
+    /* ======================================================
+       LOADING
+       ====================================================== */
+
+    #loading {
+
+      text-align: center;
+
+      padding: 25px;
+
+      font-size: 18px;
+
+      display: block;
+
+    }
+
+
+    /* ======================================================
+       ERROR
+       ====================================================== */
+
+    #error {
+
+      display: none;
+
+      margin: 15px;
+
+      padding: 15px;
+
+      border: 1px solid #ff0000;
+
+      background: #fff0f0;
+
+      color: #cc0000;
+
+      font-size: 15px;
+
+    }
+
+
+    /* ======================================================
+       LAST UPDATED
+       ====================================================== */
+
+    #updated {
+
+      text-align: center;
+
+      font-size: 12px;
+
+      color: #777;
+
+      padding: 8px;
+
+    }
+
+
+    /* ======================================================
+       MOBILE
+       ====================================================== */
+
+    @media screen and (max-width: 768px) {
+
+      #doc-container {
+
+        padding: 5px;
+
+      }
+
+
+      #loading {
+
+        font-size: 16px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       LOADING MESSAGE
+       ===================================================== -->
+
+  <div id="loading">
+
+    Loading scheme details...
+
+  </div>
+
+
+  <!-- =====================================================
+       ERROR MESSAGE
+       ===================================================== -->
+
+  <div id="error"></div>
+
+
+  <!-- =====================================================
+       GOOGLE DOC CONTENT
+       ===================================================== -->
+
+  <div id="doc-container"></div>
+
+
+  <!-- =====================================================
+       LAST UPDATED
+       ===================================================== -->
+
+  <div id="updated"></div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script
+    src="script.js"
+    defer>
+  </script>
+
+
+</body>
+
+</html>
