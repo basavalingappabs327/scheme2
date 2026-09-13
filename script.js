@@ -612,6 +612,51 @@ function fixAllLinks() {
 
 
       // ------------------------------------------------------
+      // Convert Google Drive DOWNLOAD links → VIEW links
+      //
+      // Example:
+      // https://docs.google.com/uc?export=download&id=FILE_ID
+      // becomes
+      // https://drive.google.com/file/d/FILE_ID/view
+      // ------------------------------------------------------
+
+      try {
+
+        // Pattern 1: docs.google.com/uc?export=download&id=...
+        if (
+          /docs\.google\.com\/uc\?.*export=download/i.test(href) ||
+          /drive\.google\.com\/uc\?.*export=download/i.test(href)
+        ) {
+
+          const parsed = new URL(href);
+          const fileId = parsed.searchParams.get("id");
+
+          if (fileId) {
+            href = "https://drive.google.com/file/d/" + fileId + "/view";
+          }
+
+        }
+
+        // Pattern 2: already has /uc?id=... (without export)
+        else if (
+          /(?:docs|drive)\.google\.com\/uc\?/i.test(href)
+        ) {
+
+          const parsed = new URL(href);
+          const fileId = parsed.searchParams.get("id");
+
+          if (fileId) {
+            href = "https://drive.google.com/file/d/" + fileId + "/view";
+          }
+
+        }
+
+      } catch (error) {
+        // Keep original href if conversion fails
+      }
+
+
+      // ------------------------------------------------------
       // Remove Google editor parameters
       // ------------------------------------------------------
 
